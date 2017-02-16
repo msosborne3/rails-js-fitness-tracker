@@ -6,3 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Workout.create(user_id: 1, content: "Cardio for 20 minutes!", calories_burned: 200)
+
+meal = Meal.create(user_id: 1, meal_type: "Breakfast")
+
+FoodItem.create(meal_id: 1,
+  name: "Chickfila Chicken Minis 4 count",
+  serving_size: 1,
+  num_servings: 1,
+  calories: 370,
+  fat: 14,
+  cholesterol: 55,
+  sodium: 900,
+  carbs: 40,
+  protein: 20
+  )

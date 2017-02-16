@@ -23,10 +23,10 @@ Also includes food diary where you can log meals. Breakfast, lunch, dinner, snac
 nested meal example
 {
   :meal => {
-    :meal_time => "Breakfast",
-    :meal_attributes => {
+    :name => "Breakfast",
+    :foods_attributes => {
       "0" => {
-        :food_name => "Chickfila 4 Count Chicken Minis",
+        :name => "Chickfila 4 Count Chicken Minis",
         :serving_size => "1 container (4 count)",
         :num_servings => 1,
         :calories => 370,
