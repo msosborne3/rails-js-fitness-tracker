@@ -10,45 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170216190214) do
+ActiveRecord::Schema.define(version: 20170216214913) do
+
+  create_table "foods", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "meal_id"
+    t.integer  "serving_size"
+    t.integer  "num_servings",        default: 1
+    t.integer  "calories",            default: 0
+    t.integer  "fat",                 default: 0
+    t.integer  "saturated_fat",       default: 0
+    t.integer  "polunsaturated_fat",  default: 0
+    t.integer  "monounsaturated_fat", default: 0
+    t.integer  "trans_fat",           default: 0
+    t.integer  "cholesterol",         default: 0
+    t.integer  "sodium",              default: 0
+    t.integer  "potassium",           default: 0
+    t.integer  "carbs",               default: 0
+    t.integer  "fiber",               default: 0
+    t.integer  "sugars",              default: 0
+    t.integer  "protein",             default: 0
+    t.integer  "vitamin_a",           default: 0
+    t.integer  "vitamin_c",           default: 0
+    t.integer  "calcium",             default: 0
+    t.integer  "iron",                default: 0
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
 
   create_table "meals", force: :cascade do |t|
-    t.string   "meal_time"
-    t.string   "food_name"
-    t.integer  "serving_size"
-    t.integer  "num_servings"
-    t.integer  "calories"
-    t.integer  "fat"
-    t.integer  "saturated_fat"
-    t.integer  "polunsaturated_fat"
-    t.integer  "monounsaturated_fat"
-    t.integer  "trans_fat"
-    t.integer  "cholesterol"
-    t.integer  "sodium"
-    t.integer  "potassium"
-    t.integer  "carbs"
-    t.integer  "fiber"
-    t.integer  "sugars"
-    t.integer  "protein"
-    t.integer  "vitamin_a"
-    t.integer  "vitamin_c"
-    t.integer  "calcium"
-    t.integer  "iron"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.string   "name"
     t.integer  "user_id"
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "supports", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
