@@ -1,0 +1,11 @@
+<% if current_user.first_name == "" %>
+  <h1><%= current_user.email %>'s Workouts</h1>
+<% else %>
+  <h1><%= current_user.first_name %>'s Workouts</h1>
+<% end %>
+
+<%= @workouts.each do |workout| %>
+  <%= render :partial => 'workout', :locals => {workout: workout} %><br><br>
+
+
+<% end %>

@@ -1,0 +1,8 @@
+Workout: <%= workout.content %><br>
+Calories burned: <%= workout.calories_burned %>
+
+<br>
+
+<%= link_to 'Edit Workout', [:edit, workout] %> 
+<%= link_to 'Delete', workout_path(workout),
+            data: {:confirm => 'Are you sure?'}, :method => :delete %>
