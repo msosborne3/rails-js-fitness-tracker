@@ -28,3 +28,28 @@ user has_many support
 
 post includes content, user_id
 support includes user_id, post_id
+
+# Controllers
+
+Workouts controller
+  
+  def new
+  end
+
+  def create
+  end
+
+  def show
+    - planning to use a partial for the show page so that the same information can be displayed on the "profile" page.
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
+end
