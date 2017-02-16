@@ -6,6 +6,5 @@ class User < ApplicationRecord
 
   has_many :workouts
   has_many :meals
-  has_many :posts
-  has_many :supports
+  has_many :foods, :through => :meals
 end
