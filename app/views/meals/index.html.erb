@@ -1,7 +1,5 @@
 <h1>Your Meals</h1>
 
-<%= @meals.each do |meal| %>
+<% @meals.each do |meal| %>
   <%= render :partial => 'meal', :locals => {meal: meal} %><br><br>
-
-
 <% end %>
