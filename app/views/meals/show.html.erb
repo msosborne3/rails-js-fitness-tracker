@@ -1,9 +1,10 @@
 <h1><%= @meal.meal_type %></h1>
+<h3>Date: <%= to_date(@meal.created_at) %></h3>
 
 <ul>
 <% @meal.food_items.each do |food| %>
   <ul>
-    <li>Name: <%= food.name %></li>
+    <li>Name: <%= food.name %></li><br>
 
     <li>Serving Size: <%= food.serving_size %></li><br>
 
@@ -21,6 +22,6 @@
 
     <li>Protein: <%= food.protein %></li><br>
 
-  </ul>
+  </ul><br>
 <% end %>
 </ul>

@@ -5,6 +5,9 @@ class MealsController < ApplicationController
     @meals = current_user.meals
   end
 
+  def show
+  end
+
   def new
     @meal = Meal.new
     @meal.food_items.build()
@@ -12,17 +15,14 @@ class MealsController < ApplicationController
   end
 
   def create
-    @meal = Meal.new(user_id: current_user.id)
+    @meal = Meal.create(user_id: current_user.id)
     @meal.update(meal_params)
     binding.pry
-    if @meal.save
+    if @meal
       redirect_to meal_path(@meal)
     else
       redirect_to controller: "meals", action: "new"
     end
-  end
-
-  def show
   end
 
   def edit
@@ -41,7 +41,7 @@ class MealsController < ApplicationController
   def destroy
     @meal.destroy
     respond_to do |format|
-      format.html { redirect_to user_path(current_user), notice: 'Meal was successfully deleted.' }
+      format.html { redirect_to meals_path, notice: 'Meal was successfully deleted.' }
     end
   end
 
