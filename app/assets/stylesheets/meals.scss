@@ -1,3 +1,42 @@
 // Place all the styles related to the meals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.content {
+  margin: 50px 40px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0 10px ;
+  padding: 0;
+}
+
+.links {
+  list-style-type: none;
+  margin: 10px 20px;
+  padding: 0;
+  overflow: hidden;
+  float: left;
+  display: inline-block;
+}
+
+a {
+  color: black;
+  text-align: center;
+  padding: 0 20px 0 0;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00AAAD;
+}
+
+.add a {
+  padding: 10px;
+  color: #00AAAD;
+}
+
+.add a:hover {
+  color: black;
+}

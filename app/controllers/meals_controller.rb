@@ -15,7 +15,6 @@ class MealsController < ApplicationController
   def new
     @meal = Meal.new
     @meal.food_items.build()
-    @meal.food_items.build()
   end
 
   # the meal and food items making up the meal are created and saved
