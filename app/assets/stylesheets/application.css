@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+.heading {
+  border-bottom: 1px solid;
+}
+
+.logo {
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px 40px;
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 30px 35px;
+  overflow: hidden;
+  float: right;
+  display: inline-block;
+}
+
+.nav li {
+  float: left;
+}
+
+.nav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.nav li a:hover {
+  background-color: #00AAAD;
+}

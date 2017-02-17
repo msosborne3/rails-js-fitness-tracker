@@ -9,10 +9,11 @@
   </head>
 
   <body>
+    <div class="heading">
+      <%= render 'layouts/header' %>
 
-    <%= render 'layouts/header' %>
-
-    <img src="/images/fitness_tracker_logo.png" alt="Fitness Tracker Logo" style="width:300px;">
+      <img class="logo" src="/images/fitness_tracker.png" alt="Fitness Tracker Logo" style="height:75px;">
+    </div>
     <%= yield %>
   </body>
 </html>
