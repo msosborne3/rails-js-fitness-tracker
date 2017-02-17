@@ -26,4 +26,9 @@
       </ul><br>
     <% end %>
     </ul>
+
+    <%= link_to 'Edit', [:edit, @meal] %> 
+    <%= link_to 'Delete', meal_path(@meal),
+              data: {:confirm => 'Are you sure?'}, :method => :delete %>
+
 </div>

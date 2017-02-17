@@ -35,12 +35,10 @@ class MealsController < ApplicationController
 
   # updates the meal and nested food items
   def update
-    respond_to do |format|
-      if @meal.update(meal_params)
-        format.html { redirect_to @meal, notice: 'Meal was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    if @meal.update(meal_params)
+      redirect_to meal_path(@meal)
+    else
+      redirect_to controller: "meals", action: "new"
     end
   end
 
