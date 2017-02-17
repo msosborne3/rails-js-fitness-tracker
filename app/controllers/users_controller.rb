@@ -1,13 +1,16 @@
 class UsersController < ApplicationController
+  # renders the profile page for a user.
   def show
     @user = User.find(params[:id])
     @workouts = @user.workouts
   end
 
+  # renders the form to update user information such as name, height, etc.
   def edit
 
   end
 
+  # updates the user information
   def update
     respond_to do |format|
       if current_user.update(user_params)

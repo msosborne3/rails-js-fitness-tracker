@@ -1,14 +1,17 @@
 class WorkoutsController < ApplicationController
   before_action :set_workout, only: [:show, :edit, :update, :destroy]
 
+  # lists all of the current user's workouts
   def index
     @workouts = current_user.workouts
   end
 
+  # renders the form to create a new workout
   def new
     @workout = Workout.new
   end
 
+  # creates a new workout belonging to the current user
   def create
     @workout = Workout.new(user_id: current_user.id)
     @workout.update(workout_params)
@@ -19,12 +22,15 @@ class WorkoutsController < ApplicationController
     end
   end
 
+  # shows the details of a specific workout
   def show
   end
 
+  # renders a form to edit a specific workout
   def edit
   end
 
+  # updates the workout
   def update
     respond_to do |format|
       if @workout.update(workout_params)
@@ -35,6 +41,7 @@ class WorkoutsController < ApplicationController
     end
   end
 
+  # deletes the workout
   def destroy
     @workout.destroy
     respond_to do |format|
@@ -44,6 +51,7 @@ class WorkoutsController < ApplicationController
 
   private
 
+  # finds a specific workout
   def set_workout
     @workout = Workout.find_by(id: params[:id])
   end
