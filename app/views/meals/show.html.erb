@@ -1,27 +1,29 @@
-<h2><%= @meal.meal_type %></h2>
-<h3>Date: <%= to_date(@meal.created_at) %></h3>
+<div class="content">
+    <h2><%= @meal.meal_type %></h2>
+    <h3>Date: <%= to_date(@meal.created_at) %></h3>
 
-<ul>
-<% @meal.food_items.each do |food| %>
-  <ul>
-    <li>Name: <%= food.name %></li><br>
+    <ul>
+    <% @meal.food_items.each do |food| %>
+      <ul>
+        <li>Name: <%= food.name %></li><br>
 
-    <li>Serving Size: <%= food.serving_size %></li><br>
+        <li>Serving Size: <%= food.serving_size %></li><br>
 
-    <li>Number of Servings: <%= food.num_servings %></li><br>
+        <li>Number of Servings: <%= food.num_servings %></li><br>
 
-    <li>Calories: <%= food.calories %></li><br>
+        <li>Calories: <%= food.calories %></li><br>
 
-    <li>Fat: <%= food.fat %></li><br>
+        <li>Fat: <%= food.fat %></li><br>
 
-    <li>Cholesterol: <%= food.cholesterol %></li><br>
+        <li>Cholesterol: <%= food.cholesterol %></li><br>
 
-    <li>Sodium: <%= food.sodium %></li><br>
+        <li>Sodium: <%= food.sodium %></li><br>
 
-    <li>Carbs: <%= food.carbs %></li><br>
+        <li>Carbs: <%= food.carbs %></li><br>
 
-    <li>Protein: <%= food.protein %></li><br>
+        <li>Protein: <%= food.protein %></li><br>
 
-  </ul><br>
-<% end %>
-</ul>
+      </ul><br>
+    <% end %>
+    </ul>
+</div>
