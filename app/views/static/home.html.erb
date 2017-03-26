@@ -1,8 +1,14 @@
 <h1 class="welcome">Welcome to your personal fitness tracker!</h1>
 
 <div class="home">
-<ul>
-  <li><%= link_to "Log a new workout", new_workout_path %></li>
-  <li><%= link_to "Log a new meal", new_meal_path %></li>
-  </ul>
+
+  <% if current_user %>
+    <ul>
+      <li><%= link_to "Log a new workout", new_workout_path %></li>
+      <li><%= link_to "Log a new meal", new_meal_path %></li>
+    </ul>
+  <% else %>
+    <h2 class="welcome">Please sign in or sign up to get started!</h3>
+  <% end %>
+  
 </div>
