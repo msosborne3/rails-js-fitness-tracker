@@ -1,6 +1,9 @@
 <div class="content">
   <h2>Workout</h2>
 
+  <a href="#" class="js-prev" data-id="<%= @workout.id %>">Previous Workout</a>
+  <a href="#" class="js-next" data-id="<%= @workout.id %>">Next Workout</a>
+
   <h3 class="workoutDate"><%= to_date(@workout.created_at) %></h3>
   <p class="workoutContent">Workout: <%= @workout.content %></p>
   <p class="workoutCalories">Calories burned: <%= @workout.calories_burned %></p>
@@ -10,9 +13,6 @@
   <%= link_to 'Edit Workout', [:edit, @workout] %> 
   <%= link_to 'Delete', workout_path(@workout),
             data: {:confirm => 'Are you sure?'}, :method => :delete %>
-
-
-  <a href="#" class="js-next" data-id="<%= @workout.id %>">Next Workout</a>
 </div>
 
 <script type="text/javascript" charset="utf-8">
@@ -25,6 +25,21 @@ $(function () {
       $(".workoutCalories").text(data["calories_burned"]);
       // reset the id to the new current id
       $(".js-next").attr("data-id", data["id"]);
+    });
+  });
+});
+</script>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-prev").on("click", function() {
+    var prevId = parseInt($(".js-prev").attr("data-id")) - 1;
+    $.get("/workouts/" + prevId + ".json", function(data) {
+      $(".workoutDate").text(data["created_at"]);
+      $(".workoutContent").text(data["content"]);
+      $(".workoutCalories").text(data["calories_burned"]);
+      // reset the id to the new current id
+      $(".js-prev").attr("data-id", data["id"]);
     });
   });
 });
