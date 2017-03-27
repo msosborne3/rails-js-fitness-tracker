@@ -24,6 +24,10 @@ class WorkoutsController < ApplicationController
 
   # shows the details of a specific workout
   def show
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @workout }
+    end
   end
 
   # renders a form to edit a specific workout
