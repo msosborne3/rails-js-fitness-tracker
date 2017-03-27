@@ -2,4 +2,6 @@
   <h2>Workout</h2>
 
   <%= render :partial => 'workout', :locals => {workout: @workout} %>
+
+  <a href="#" class="js-next" data-id="<%= @workout.id %>">Next Workout</a>
 </div>
