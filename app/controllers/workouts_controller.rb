@@ -16,7 +16,7 @@ class WorkoutsController < ApplicationController
     @workout = Workout.new(user_id: current_user.id)
     @workout.update(workout_params)
     if @workout.save
-      redirect_to workout_path(@workout)
+      render json: @workout, status: 201
     else
       redirect_to controller: "workouts", action: "new"
     end
